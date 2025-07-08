@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Biodiversity Monitoring Dashboard – User Guide</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      background: #151b28;
+      color: #e8eaf2;
+      font-family: 'Segoe UI', 'Arial', sans-serif;
+      margin: 0;
+      line-height: 1.75;
+      min-height: 100vh;
+    }
+    .container {
+      max-width: 840px;
+      margin: 48px auto 32px auto;
+      background: #1d2231;
+      border-radius: 18px;
+      box-shadow: 0 8px 32px #0007, 0 2px 8px #0002;
+      padding: 42px 44px;
+    }
+    h1, h2, h3 {
+      color: #66a7ff;
+      margin-top: 1.2em;
+      margin-bottom: 0.6em;
+    }
+    h1 {
+      text-align: center;
+      font-size: 2.35em;
+      letter-spacing: 1px;
+    }
+    h2 {
+      font-size: 1.32em;
+    }
+    h3 {
+      font-size: 1.1em;
+    }
+    .logo {
+      display: block;
+      margin: 0 auto 1em auto;
+      width: 64px;
+      border-radius: 12px;
+    }
+    .abstract {
+      background: #202a3e;
+      border-left: 5px solid #51d4c2;
+      border-radius: 10px;
+      padding: 18px 24px;
+      margin-bottom: 26px;
+      font-size: 1.1em;
+    }
+    .section {
+      margin-bottom: 2em;
+    }
+    .instructions ol {
+      margin-left: 18px;
+    }
+    .note, .faq {
+      background: #222b3a;
+      border-radius: 8px;
+      padding: 15px 18px;
+      margin-bottom: 20px;
+      font-size: 1em;
+      box-shadow: 0 1px 4px #0002;
+    }
+    .note {
+      border-left: 4px solid #ffd479;
+      color: #ffeaa7;
+    }
+    .faq {
+      border-left: 4px solid #64b5f6;
+      color: #b9f6ca;
+    }
+    .csv-example {
+    background: #10131c;
+    border: 1px solid #455a64;
+    border-radius: 8px;
+    color: #f7f8fa;
+    padding: 6px 22px 14px 22px;
+    font-size: 0.96em;
+    margin: 14px 0 18px 0;
+    overflow-x: auto;
+    white-space: pre-line;
+    line-height: 1.0; 
+    }
+    .download-btn {
+      display: block;
+      background: linear-gradient(90deg, #29b6f6, #43e97b);
+      color: #1c1e22;
+      font-weight: 600;
+      font-size: 1.18em;
+      padding: 13px 34px;
+      border: none;
+      border-radius: 8px;
+      text-align: center;
+      margin: 28px auto 6px auto;
+      text-decoration: none;
+      box-shadow: 0 2px 8px #29b6f622;
+      transition: background 0.18s, box-shadow 0.18s;
+      cursor: pointer;
+      width: max-content;
+    }
+    .download-btn:hover {
+      background: linear-gradient(90deg, #2980b9, #43e97b);
+      color: #fff;
+      box-shadow: 0 4px 18px #4fc3f744;
+    }
+    .footer {
+      text-align: center;
+      color: #7c8ba3;
+      margin-top: 46px;
+      font-size: 1em;
+      padding-bottom: 16px;
+    }
+    a {
+      color: #4fc3f7;
+      text-decoration: underline;
+    }
+    @media (max-width: 600px) {
+      .container { padding: 20px 5vw; max-width: 95vw;}
+      h1 { font-size: 1.35em; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img class="logo" src="img/rmit_logo.png" alt="Logo" />
+    <h1>Biodiversity Monitoring Dashboard</h1>
+
+    <div class="abstract section">
+      <strong>Abstract:</strong> <br>
+      The Biodiversity Monitoring Dashboard is a portable, local-first application that helps researchers analyze biodiversity survey data efficiently. Upload detection results, explore trends, and view summaries—all without requiring an internet connection after installation.
+    </div>
+
+    <div class="section">
+      <h2>Technology Stack & Compatibility</h2>
+      <ul>
+        <li><b>Stack:</b> Grafana (visualization), Node-RED (data handling), TimescaleDB/PostgreSQL, Docker Desktop</li>
+        <li><b>Supported OS:</b> Windows 10/11, MacOS (Intel or Apple Silicon), Linux (with Docker Desktop)</li>
+        <li><b>Requirements:</b> Docker Desktop must be installed. No internet connection needed after initial download.</li>
+      </ul>
+    </div>
+
+    <div class="section instructions">
+      <h2>Setup & Usage Instructions</h2>
+      <ol>
+        <li>Unzip the downloaded folder to any location (e.g., Desktop).</li>
+        <li><b>Install Docker Desktop</b> if not already installed:<br>
+          <a href="https://www.docker.com/products/docker-desktop/" target="_blank">https://www.docker.com/products/docker-desktop/</a>
+        </li>
+        <li>Start Docker Desktop and wait until it finishes initializing.</li>
+        <li>Double-click <b>Windows.bat</b> (for Windows) or <b>MacOS.command</b> (for Mac). For Linux, run the appropriate shell script in Terminal.</li>
+        <li>The dashboard should open in your browser with two key components:<br>
+            &emsp;• <b>Node-RED UI</b> for uploading or flushing data<br>
+            &emsp;• <b>Grafana</b> for exploring results and trends
+        </li>
+        <li>Grafana login: <b>admin</b> / <b>0m{-}&gt;7nP8)C</b></li>
+        <li>To stop: simply close your browser window.</li>
+      </ol>
+      <div class="note">
+        <b>Note:</b><br>
+        Windows or Mac may show a security prompt the first time you run the script.<br>
+        • <b>Windows:</b> Click “Run anyway” if prompted.<br>
+        • <b>Mac:</b> Allow the script through “Security & Privacy” settings.<br>
+        • <b>Linux:</b> Ensure the script has execution permissions (e.g., <code>chmod +x start.sh</code>).
+      </div>
+
+      <a class="download-btn" href="https://github.com/thieulong/Biodiversity-Monitoring-Dashboard/releases/download/Downloads/Biodiversity-Monitoring-Dashboard.zip" target="_blank">Download Biodiversity Dashboard (.zip)</a>
+    </div>
+
+    <div class="section">
+      <h2>CSV File Format</h2>
+      <p>The system expects CSV input files with the following columns:</p>
+      <div class="csv-example">
+        <code>
+Start (s), End (s), Scientific name, Common name, Confidence, File<br><br>
+# Start (s) – number: segment start time<br>
+# End (s) – number: segment end time<br>
+# Scientific name – string<br>
+# Common name – string<br>
+# Confidence – float (0.0 - 1.0)<br>
+# File – string (file name or full path)
+        </code>
+      </div>
+      <p>Please ensure the file includes a header row and is properly comma-separated.</p>
+    </div>
+
+    <div class="section">
+      <h2>Troubleshooting & FAQ</h2>
+      <div class="faq"><b>Q: Docker Desktop won't start?</b><br>
+        A: Make sure virtualization is enabled in your BIOS (for Windows) or check Docker support documentation for your OS.
+      </div>
+      <div class="faq"><b>Q: Dashboard doesn’t open in the browser?</b><br>
+        A: Open <code>index.html</code> manually from the unzipped folder, or try:<br>
+        • <a href="http://localhost:1880/ui/" target="_blank">Node-RED UI</a><br>
+        • <a href="http://localhost:3000/" target="_blank">Grafana Dashboard</a>
+      </div>
+      <div class="faq"><b>Q: Still having issues?</b><br>
+        A: Reach out at <a href="mailto:paul.phan@rmit.edu.au">paul.phan@rmit.edu.au</a>
+      </div>
+    </div>
+
+    <div class="footer">
+      &copy; 2025 Biodiversity Monitoring Project | For scientific purposes
+    </div>
+  </div>
+</body>
+</html>
