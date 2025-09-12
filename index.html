@@ -138,7 +138,7 @@
       <h2>Technology Stack & Compatibility</h2>
       <ul>
         <li><b>Stack:</b> Grafana (visualization), Node-RED (data upload & processing), TimescaleDB/PostgreSQL (data storage), Docker Desktop (environment management)</li>
-        <li><b>Supported OS:</b> Windows 10/11, MacOS (Intel or Apple Silicon), Linux (with Docker Desktop)</li>
+        <li><b>Supported OS:</b> Windows 10/11 <b>(Recommended)</b>, MacOS (tested on Intel & not tested on Apple Silicon), Linux (tested on Ubuntu ≤ 24.04)</li>
         <li><b>Requirements:</b> Docker Desktop must be installed. No internet connection needed after initial download.</li>
       </ul>
     </div>
@@ -150,13 +150,18 @@
         <li><b>Install Docker Desktop</b> if not already installed:<br>
           <a href="https://www.docker.com/products/docker-desktop/" target="_blank">https://www.docker.com/products/docker-desktop/</a>
         </li>
-        <li>Double-click <b>Windows.bat</b> (for Windows) or <b>MacOS.command</b> (for Mac). For Linux, run the Linux.sh shell script in Terminal.</li>
-        <li>The dashboard should open in your browser with two key components:<br>
-            &emsp;• <b>Node-RED UI</b> for uploading or flushing data<br>
-            &emsp;• <b>Grafana</b> for exploring results and trends
-        </li>
-        <li>Grafana login (will be pre-filled): <b>admin</b> / <b>0m{-}&gt;7nP8)C</b></li>
-        <li>To stop: simply close your browser window.</li>
+        <li>Double-click <b>Install (Windows).bat</b> (for Windows) or <b>Install (MacOS).command</b> (for Mac).
+        <li>Wait for the app to start up (may take a few minutes on first run, please wait for it to finishing setting up).</li>
+        <li>A web portal should open in your browser automatically. If not, open <code>index.html</code> from the unzipped folder.</li>
+        <li>From here, you can upload or delete your CSV files using the upload section (multiple files supported).</li>
+        <li>Once uploaded, please wait a while for data to be passed into database, then you can go back and view the data uploaded on Grafana dashboard.</li>
+        <li>In case of Grafana asking for account credentials. Please put: </li>
+        <ul>
+        <li>Username: <b>admin</b></li>
+        <li>Password: <b>0m{-}&gt;7nP8)C</b></li>
+        </ul>
+        <li>To stop the application, simply close the browser tab.</li>
+        <li>To uninstall: run <b>Uninstall (Windows).bat</b> or <b>Uninstall (MacOS).command</b> to erase all data and containers.</li>
       </ol>
       <div class="note">
         <b>Note:</b><br>
@@ -183,7 +188,10 @@ Start (s), End (s), Scientific name, Common name, Confidence, File<br><br>
 # File – string (file name or full path)
         </code>
       </div>
-      <p>Please ensure the file includes a header row and is properly comma-separated.</p>
+      <div class="note">
+        <b>Note:</b><br>
+        Please ensure the file includes a header row and is properly comma-separated. You can check out the sample datasets in <b>sample-data</b> folder. These files can also be used for upload testings.
+      </div>
     </div>
 
     <div class="section">
